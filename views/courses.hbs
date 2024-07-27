@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <br>
+        <h2>Courses</h2>
+        <hr />
+
+        {{#unless courses}}
+            <div class="col-md-12 text-center">
+                <strong>{{message}}</strong>
+            </div>
+        {{else}}
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each courses}}
+                            <tr>
+                                <td><a href="/course/{{courseId}}">{{courseCode}}</a></td>
+                                <td><a href="/students?course={{courseId}}">{{courseDescription}}</a></td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        {{/unless}}
+    </div>
+</div>
